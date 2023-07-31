@@ -1,0 +1,156 @@
+#app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 100px auto 300px;
+  row-gap: 1rem;
+  background-image: url("https://wallpaperaccess.com/full/191519.jpg");
+}
+
+#header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: ". logo search menu .";
+  grid-template-columns: 5% 25% 40% 25% 5%;
+  grid-template-rows: 100%;
+}
+
+#main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: ". title ." ". user-form ." ". form-buttons .";
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: max-content max-content max-content;
+  row-gap: 1rem;
+}
+
+#footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-areas: ". infos ." ". social-medias .";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 60% 40%;
+}
+
+/* header */
+
+.logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.search {
+  grid-area: search;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.logo-link {
+  height: 80%;
+}
+
+.logo-img {
+  height: 100%;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* header */
+
+/* main */
+
+.title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-form {
+  grid-area: user-form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.user-form-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-buttons {
+  grid-area: form-buttons;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+/* main */
+
+/* footer */
+
+.infos {
+  grid-area: infos;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-medias {
+  grid-area: social-medias;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* footer */
+
+@media screen and (min-width: 1000px) {
+  #app {
+    grid-template-rows: 150px auto 150px;
+  }
+
+  #header {
+    grid-template-areas:
+      ". logo . search ."
+      "menu menu menu menu menu";
+    grid-template-columns: 1% 24% 50% 24% 1%;
+    grid-template-rows: 50% 50%;
+  }
+
+  #main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #footer {
+    grid-template-areas: ". infos  social-medias";
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100%;
+  }
+
+  .search-control {
+    width: 50%;
+  }
+}
